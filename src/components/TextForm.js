@@ -47,6 +47,7 @@ export default function TextForm(props) {
         <div className="container" style={{color: props.mode==='dark'?'white':'#042743'}}> 
             <h1 className='mb-4'>{props.heading}</h1>
             <div className="mb-3"> 
+            <label htmlFor="myBox" className='form-label' style={{fontWeight:"500",fontSize:"1.4rem"}}>Enter your text here :</label>
             <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'black':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
             </div>
             <button disabled={text.length===0} style={myStyle} className="btn btn-secondary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
@@ -59,8 +60,8 @@ export default function TextForm(props) {
             <h2>Summary of Your Text</h2>
             <p>Number of Words : {text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</p>
             <p>Number of Characters : {text.split(/\w/).length - 1} characters</p>
-            <h2>Preview</h2>
-            <p>{text.length>0?text:"Nothing to preview!"}</p>
+            <h2 style={{textAlign:"center"}}>Preview</h2>
+            <textarea className="form-control" readOnly value={text} style={{backgroundColor: props.mode==='dark'?'black':'white', color: props.mode==='dark'?'white':'#042743'}} id="previw" rows="4"></textarea>
         </div>
         </>
     )
