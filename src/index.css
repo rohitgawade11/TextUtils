@@ -1,6 +1,14 @@
 body{
   background: linear-gradient(rgb(230, 100, 101), rgb(145, 152, 229));
 }
+footer{
+  text-align: center;
+  background: transparent !important;
+  box-shadow: rgb(0 0 0 / 16%) 0px 1px 10px;
+  color: white;
+  padding: 1rem;
+  margin-top: 3rem;
+}
 
 .custom-nav{
   background: transparent !important;

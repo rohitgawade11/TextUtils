@@ -8,19 +8,19 @@ export default function TextForm(props) {
     const handleUpClick = ()=>{
         let newText = text.toUpperCase();
         setText(newText)
-        props.showAlert("Converted to uppercase!", "danger");
+        props.showAlert("Converted to uppercase!");
     }
 
     const handleLoClick = ()=>{ 
         let newText = text.toLowerCase();
         setText(newText)
-        props.showAlert("Converted to lowercase!", "danger");
+        props.showAlert("Converted to lowercase!");
     }
 
     const handleClearClick = ()=>{ 
         let newText = '';
         setText(newText);
-        props.showAlert("Text Cleared!", "danger");
+        props.showAlert("Text Cleared!");
     }
 
     const handleOnChange = (event)=>{
@@ -29,13 +29,12 @@ export default function TextForm(props) {
 
     const handleCopy = () => {
         navigator.clipboard.writeText(text); 
-        props.showAlert("Copied to Clipboard!", "danger");
+        props.showAlert("Copied to Clipboard!");
     }
     const handleExtraSpaces = () => {
-        let newText = text.split(/[ ]+/);
+        let newText = text.split(/\s+/);
         setText(newText.join(" "));
-        console.log(text);
-        props.showAlert("Extra spaces removed!", "danger");
+        props.showAlert("Extra spaces removed!");
     }
 
    
