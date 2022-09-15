@@ -61,7 +61,7 @@ export default function TextForm(props) {
             <p>Number of Words : {text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</p>
             <p>Number of Characters : {text.split(/\w/).length - 1} characters</p>
             <h2 style={{textAlign:"center"}}>Preview</h2>
-            <textarea className="form-control" readOnly value={text} style={{backgroundColor: props.mode==='dark'?'black':'white', color: props.mode==='dark'?'white':'#042743'}} id="previw" rows="4"></textarea>
+            <textarea className="form-control" readOnly value={text.length > 0 ? text : "Nothing to preview"} style={{backgroundColor: props.mode==='dark'?'black':'white', color: props.mode==='dark'?'white':'#042743'}} id="previw" rows="4"></textarea>
         </div>
         </>
     )
