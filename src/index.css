@@ -1,0 +1,17 @@
+body{
+  background: linear-gradient(rgb(230, 100, 101), rgb(145, 152, 229));
+}
+
+.custom-nav{
+  background: transparent !important;
+  box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+}
+.btn{
+  background-color: transparent !important;
+}
+.btn-secondary:hover{
+  background-color: transparent !important;
+}
+.btn-secondary:active{
+  background-color: transparent !important;
+}

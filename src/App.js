@@ -6,7 +6,6 @@ import Alert from './components/Alert';
 
  
 function App() {
-  const [mode, setMode] = useState('light'); // Whether dark mode is enabled or not
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type)=>{
@@ -19,24 +18,13 @@ function App() {
       }, 1500);
   }
 
-  const toggleMode = ()=>{
-    if(mode === 'light'){
-      setMode('dark');
-      document.body.style.backgroundColor = 'black';
-      showAlert("Dark mode has been enabled", "success");
-    }
-    else{
-      setMode('light');
-      document.body.style.backgroundColor = 'white';
-      showAlert("Light mode has been enabled", "success");
-    }
-  }
+  
   return (
     <>
   
-    <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}  />
+    <Navbar title="TextUtils"  />
     <Alert alert={alert}/>
-            <TextForm showAlert={showAlert} heading="Try TextUtils - word counter, character counter, remove extra spaces" mode={mode}/>
+    <TextForm showAlert={showAlert} heading="Try TextUtils - word counter, character counter, remove extra spaces"/>
     </> 
   );
 }
