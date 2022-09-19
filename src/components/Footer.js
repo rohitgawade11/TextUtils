@@ -6,7 +6,7 @@ export default function Footer() {
     let currentYear = date.getFullYear();
 
   return (
-    <footer>
+    <footer className='text-center'>
      © TextUtils {previousYear}-{currentYear}, All Right Reserved...!
   </footer>
   )
