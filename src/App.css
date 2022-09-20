@@ -1,0 +1,22 @@
+.text-utils{
+    text-decoration: none;
+    color: black;
+}
+.text-utils:hover{
+    color: black; 
+}
+.list-group-item:not(.first):hover{
+    background-color: #6ac96a;
+    color: white;  
+}
+.first{
+    background-color: green;
+    color: white;
+}
+
+
+@media screen and (max-width: 800px){
+ .list-group-horizontal{
+    flex-direction: column !important;
+ }   
+}
