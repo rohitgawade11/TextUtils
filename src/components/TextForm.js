@@ -1,58 +1,29 @@
-import React, { useState } from 'react'
-
+import React,{useContext} from 'react';
+import { Link } from 'react-router-dom'
+import TextContext from '../text context/TextContext';
 
 export default function TextForm(props) {
-
-    const [text, setText] = useState('');
-
-    const handleUpClick = () => {
-        let newText = text.toUpperCase();
-        setText(newText)
-        props.showAlert("Converted to uppercase!");
-    }
-
-    const handleLoClick = () => {
-        let newText = text.toLowerCase();
-        setText(newText)
-        props.showAlert("Converted to lowercase!");
-    }
-
-    const handleClearClick = () => {
-        let newText = '';
-        setText(newText);
-        props.showAlert("Text Cleared!");
-    }
-
-    const handleOnChange = (event) => {
-        setText(event.target.value)
-    }
-
-    const handleCopy = () => {
-        navigator.clipboard.writeText(text);
-        props.showAlert("Copied to Clipboard!");
-    }
-    const handleExtraSpaces = () => {
-        let newText = text.split(/\s+/);
-        setText(newText.join(" "));
-        props.showAlert("Extra spaces removed!");
-    }
+    const {clickEvent} = props;
+    const context = useContext(TextContext);
+    const {text,handleOnChange} = context;
+    
 
     return (
         <>
             <div className="container">
-                <h1 className='mb-4'>{props.heading}</h1>
+                <h1 className='mb-4'>Try TextUtils - word counter, character counter, remove extra spaces</h1>
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
-                        <a className="nav-link" href="/uppercase">Uppercase</a>
+                        <Link className="nav-link" to="/">Uppercase</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/lowercase">Lowercase</a>
+                        <Link className="nav-link" to="/lowercase">Lowercase</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/remove-extra-space">Remove Extra Space</a>
+                        <Link className="nav-link" to="/remove-extra-space">Remove Extra Space</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/find-and-replace">Find and Replace</a>
+                        <Link className="nav-link" to="/find-and-replace">Find and Replace</Link>
                     </li>
                 </ul>
                 <div className="row my-5">
@@ -61,7 +32,7 @@ export default function TextForm(props) {
                             <label htmlFor="myBox" className='form-label' style={{ fontWeight: "500", fontSize: "1.4rem" }}>Enter your text here :</label>
                             <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === 'dark' ? 'black' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }} id="myBox" rows="8"></textarea>
                             <div className="d-flex justify-content-center mt-3">
-                            <button className="btn btn-success">Submit</button>
+                            <button className="btn btn-success" onClick={clickEvent}>Submit</button>
                             </div>
                      
                         </div>
@@ -70,6 +41,9 @@ export default function TextForm(props) {
                         <div className="mb-3">
                             <label htmlFor="myOutput" className='form-label' style={{ fontWeight: "500", fontSize: "1.4rem" }}>Output :</label>
                             <textarea className="form-control" value={text} readOnly style={{ backgroundColor: props.mode === 'dark' ? 'black' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }} id="myOutput" rows="8"></textarea>
+                            <div className="d-flex justify-content-center mt-3">
+                            <button className="btn btn-outline-success">Copy Text</button>
+                            </div>
                         </div>
                     </div>
                 </div>
