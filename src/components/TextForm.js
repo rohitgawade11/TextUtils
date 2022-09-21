@@ -7,8 +7,14 @@ export default function TextForm(props) {
     const location = useLocation();
     const { clickEvent, example } = props;
     const context = useContext(TextContext);
-    const { text, handleOnChange } = context;
+    const { text, handleOnChange, find, replace, setFind, setReplace,handleClearClick,handleCopy } = context;
 
+    const handleOnChangeFind = (event) => {
+        setFind(event.target.value);
+    }
+    const handleOnChangeReplace = (event) => {
+        setReplace(event.target.value);
+    }
 
     return (
         <>
@@ -21,7 +27,13 @@ export default function TextForm(props) {
                             <label htmlFor="myBox" className='form-label' style={{ fontWeight: "500", fontSize: "1.4rem" }}>Enter your text here :</label>
                             <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === 'dark' ? 'black' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }} id="myBox" rows="8"></textarea>
                             <div className="d-flex justify-content-center mt-3">
-                                <button className="btn btn-success" onClick={clickEvent}>Submit</button>
+                                {location.pathname === '/find-and-replace' &&
+                                    <div className='d-flex'>
+                                        <input type="text" value={find} name="find" placeholder='fine' onChange={handleOnChangeFind} id="find" className="form-control mx-1" />
+                                        <input type="text" value={replace} name="replace" placeholder='replace' onChange={handleOnChangeReplace} id="replace" className="form-control mx-1" />
+                                    </div>}
+                                <button className="btn btn-outline-success mx-1" onClick={clickEvent}>Submit</button>
+                                <button className="btn btn-outline-danger" onClick={handleClearClick}>Clear Text</button>
                             </div>
 
                         </div>
@@ -34,7 +46,7 @@ export default function TextForm(props) {
 
                                 <p className=' mx-2'>Words : {text.split(/\s+/).filter((element) => { return element.length !== 0 }).length}</p>
                                 <p className=' mx-2'>Characters : {text.split(/\w/).length - 1}</p>
-                                <button className="btn btn-outline-success mx-2">Copy Text</button>
+                                <button className="btn btn-outline-success mx-2" onClick={handleCopy}>Copy Text</button>
                             </div>
                         </div>
                     </div>
@@ -55,8 +67,6 @@ export default function TextForm(props) {
                             <div className="card-body">{example.op}</div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
             {/* <div className="container" style={{color:'black'}}> 

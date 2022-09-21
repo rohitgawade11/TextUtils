@@ -4,6 +4,8 @@ import TextContext from './TextContext';
 export default function TextItems(props) {
     const [alert, setAlert] = useState(null);
     const [text, setText] = useState('');
+    const [find,setFind] = useState('');
+    const [replace,setReplace] = useState('');
 
     const showAlert = (message)=>{
         setAlert(message)
@@ -25,8 +27,7 @@ export default function TextItems(props) {
     }
 
     const handleClearClick = () => {
-        let newText = '';
-        setText(newText);
+        setText('');
         showAlert("Text Cleared!");
     }
 
@@ -43,10 +44,22 @@ export default function TextItems(props) {
         setText(newText.join(" "));
         showAlert("Extra spaces removed!");
     }
-
+    const findAndReplace = ()=>{
+        if(text.includes(find)){
+            let newText = text.replace(find,replace);
+            setText(newText);
+            setFind('');
+            setReplace('');
+            showAlert(`${find} word replace with ${replace} successfully!`);
+        } else{
+            showAlert("Word not found!");
+        }
+       
+    }
+    
  
   return (
-    <TextContext.Provider value={{alert,text,showAlert,handleUpClick,handleLoClick,handleOnChange,handleCopy,handleExtraSpaces}}>
+    <TextContext.Provider value={{alert,text,find,replace,setFind,setReplace,showAlert,handleUpClick,handleLoClick,handleOnChange,handleCopy,handleExtraSpaces,findAndReplace,handleClearClick}}>
   {props.children}
     </TextContext.Provider>
   )
