@@ -1,4 +1,4 @@
-/* body{
+body{
   background: linear-gradient(rgb(230, 100, 101), rgb(145, 152, 229));
 }
 footer{
@@ -14,7 +14,7 @@ footer{
   background: transparent !important;
   box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
 }
-.btn{
+/* .btn{
   background-color: transparent !important;
 }
 .btn-secondary:hover{
