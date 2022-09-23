@@ -19,7 +19,7 @@ export default function TextForm(props) {
     return (
         <>
             <div className="container">
-                <h1 className='mb-4'>Try TextUtils - word counter, character counter, remove extra spaces</h1>
+                <h1 className='mb-4'>TextUtils - word counter, character counter, remove extra spaces</h1>
                 <TextUtils />
                 <div className="row my-5">
                     <div className="col-xl-6">
