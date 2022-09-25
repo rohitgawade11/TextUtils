@@ -37,7 +37,7 @@ export default function TextUtils() {
                 </li>
             </ul> */}
             <div className="d-flex flex-wrap align-items-center justify-content-center">
-            <div class="btn-group d-flex flex-wrap">
+            <div className="btn-group d-flex flex-wrap">
                 <Link className={`btn btn-outline-info ${location.pathname === '/' ? 'active' : ''}`} to="/">Uppercase</Link>
                 <Link className={`btn btn-outline-info ${location.pathname === '/lowercase' ? 'active' : ''}`} to="/lowercase">Lowercase</Link>
                 <Link className={`btn btn-outline-info ${location.pathname === '/remove-extra-space' ? 'active' : ''}`} to="/remove-extra-space">Remove Extra Space</Link>

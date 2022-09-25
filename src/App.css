@@ -19,4 +19,11 @@
  .list-group-horizontal{
     flex-direction: column !important;
  }   
+ .column{
+    flex-direction: column !important;
+ }
+ .self-center{
+    align-self: center !important;
+    margin-top: 0.5rem;
+ }
 }
