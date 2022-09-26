@@ -6,8 +6,10 @@ export default function About() {
   return (
     <>
       <div className="container">
-        <div className="card py-3 text-center" style={{ backgroundColor: "transparent" }}>
-          <h2 className='h1'>TextUtils - word counter, character counter, remove extra spaces</h2>
+        <h2 className='h1 text-center'>TextUtils</h2>
+        <div className='my-5'>
+          <h2>What is TextUtils ?</h2>
+          <p className='my-4 px-5 py-4 border-start border-5 border-dark text-light' style={{ backgroundColor: "rgba(0,0,0,0.3)" }}>TextUtils is a word counter and a character counting utility which can be used to manipulate your text in the way you want. You can remove extra spaces, copy the manipulated text as well as convert your text from Uppercase to lowercase and lowercase to Uppercase</p>
         </div>
         <div className='my-5'>
           <h2>How TextUtils Works ?</h2>
