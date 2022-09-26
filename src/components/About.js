@@ -9,7 +9,6 @@ export default function About() {
         <div className="card py-3 text-center" style={{ backgroundColor: "transparent" }}>
           <h2 className='h1'>TextUtils - word counter, character counter, remove extra spaces</h2>
         </div>
-         {/* <h2 className='h1 text-center'>TextUtils - word counter, character counter, remove extra spaces</h2> */}
         <div className='my-5'>
           <h2>How TextUtils Works ?</h2>
           <p className='my-4 px-5 py-4 border-start border-5 border-dark text-light' style={{ backgroundColor: "rgba(0,0,0,0.3)" }}>Dealing with texts is a common day-to-day activity. Here you can find all the text utilities to help you in performing your activity much faster. This includes tools to remove extra spaces, find and replace, case converter, and many others.</p>
@@ -42,9 +41,7 @@ export default function About() {
               <p>This tool can be used to count how many words a text has.</p>
               <button className="btn btn-outline-info btn-sm"><Link className='text-decoration-none text-light' to='/'>Words counter</Link></button>
             </div>
-
           </div>
-
         </div>
       </div>
     </>
